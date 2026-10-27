@@ -16,6 +16,8 @@ def parse_receipt_data(ocr_lines: list):
                 decoded_data["inn"] = inn_match.group()
                 if ocr_line > 0:
                     decoded_data["company"] = ocr_lines[i - 1]
+                else:
+                    decoded_data["company"] = 'Not detected'
 
         if 'итого' in ocr_line.lower(): 
             total_match = re.search(r'\d+[.,]\d{2}', ocr_line)
