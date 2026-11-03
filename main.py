@@ -13,8 +13,11 @@ def process_receipt_pipeline(image_path: str):
         return
 
     data = parse_receipt_data(extracted_text)
+    
     db_handler.save_document(data)
     print("Successfuly saved!")
+
+    return data
 
 if __name__ == "__main__":
     test_image = r"D:\sample.jpg"

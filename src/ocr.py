@@ -1,5 +1,8 @@
 import easyocr
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 class OCRProcessor:
     def __init__(self, language=None):
@@ -10,12 +13,16 @@ class OCRProcessor:
         self.reader = easyocr.Reader(language)
 
     def extract_text(self, image_path: str) -> list:
-        if os.path.exists(image_path):
-            return self.reader.readtext(image_path, detail=0)
-            
-        else:
-            print(f"Error: File {image_path} is not found!")
-            return[] #return nothing if file is not found
+        try:    
+            if os.path.exists(image_path):
+                return self.reader.readtext(image_path, detail=0)
+                
+            else:
+                logger.warning(f"Error: File {image_path} is not found!")
+                return[] 
+        except Exception as e:
+            logger.exception(f"Unexpected error during OCR processing for {image_path}")
+            return []
 
 if __name__ == "__main__":
     ocr = OCRProcessor()
