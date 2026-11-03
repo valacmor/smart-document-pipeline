@@ -29,15 +29,3 @@ class DatabaseHandler:
                 (created_at, data["company"], data["inn"], data["total"], data["date"])
             )
 
-if __name__ == "__main__":
-    db = DatabaseHandler()
-    
-    sample_data = {
-        "company": "ООО ВЕКТОР",
-        "inn": "771234567890",
-        "total": 350.00,
-        "date": "12.05.2024"
-    }
-    
-    db.save_document(sample_data)
-    print("Данные успешно сохранены в БД!")    

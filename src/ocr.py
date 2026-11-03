@@ -24,10 +24,3 @@ class OCRProcessor:
             logger.exception(f"Unexpected error during OCR processing for {image_path}")
             return []
 
-if __name__ == "__main__":
-    ocr = OCRProcessor()
-
-    test_image = r"D:\sample.jpg" 
-
-    result = ocr.extract_text(test_image)
-    print(f"OCR work result: {result}")   
