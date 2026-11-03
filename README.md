@@ -20,3 +20,8 @@
    3. DB Handler (src/database.py)   <<< Сохранение карточки в SQLite (Context Manager)
                 ↓
    4. REST API (app.py)              <<< Выдача JSON ответа через FastAPI
+```
+# Запуск через Docker
+docker build -t smart-doc-pipeline .
+
+docker run -p 8000:8000 smart-doc-pipeline
