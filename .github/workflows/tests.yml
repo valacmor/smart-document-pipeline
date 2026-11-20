@@ -1,4 +1,4 @@
-name: Run Unit Tests
+name: Run CI Pipeline
 
 on: [push]
 
@@ -23,4 +23,8 @@ jobs:
     - name: start auto-tests pytest
       run: |
         python -m pytest
+
+    - name: build docker image
+      run: |
+        docker build -t smart-document-pipeline:test .
 
