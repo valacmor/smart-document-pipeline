@@ -1,5 +1,7 @@
 # Smart Document OCR Pipeline
-![CI Pipeline](https://github.com/Valacmor/smart-document-pipeline/actions/workflows/tests.yml/badge.svg)
+
+[![Run CI Pipeline](https://github.com/valacmor/smart-document-pipeline/actions/workflows/tests.yml/badge.svg)](https://github.com/valacmor/smart-document-pipeline/actions/workflows/tests.yml)
+
 Автоматизированный микросервис для распознавания кассовых чеков. Проект использует компьютерное зрение (OCR) для извлечения текста из изображений, структурирует ключевые данные (ИНН, Суммы, Даты) с помощью алгоритмов парсинга и сохраняет результаты в SQL базу данных.
 
 ## Стек
